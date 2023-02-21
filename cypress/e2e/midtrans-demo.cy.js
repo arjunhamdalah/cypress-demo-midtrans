@@ -25,6 +25,7 @@ describe('template spec', () => {
 		cy.iframe().find('#card-expiry').type('1230');
 		cy.iframe().find('#card-cvv').type('123');
 		cy.iframe().find('.card-pay-button-part > button').click();
+		cy.wait(3000);
 		cy.get('[data-reactid=".0.0.0.2.0.1.0.0:0"]').contains('Thank you for your purchase.');
 		cy.get('[data-reactid=".0.0.0.2.0.1.0.0:2"]').contains('Get a nice sleep.');
 	});
